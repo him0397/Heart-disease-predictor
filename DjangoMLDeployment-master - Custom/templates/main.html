@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+    <style>
+    .models{
+      text-align: center;
+      color: white;
+      margin: 20px auto;
+      padding: 30px;
+      width: 180px;
+      display: flex;
+      background-color: #181515;
+      border-radius: 9px;
+    }
+    body{
+      background-image:url('https://i.pinimg.com/474x/cb/ea/2a/cbea2afacef63884c737f395c167a803.jpg');
+      background-repeat:repeat-y;
+      padding: 0px;
+      height: 100%;
+      background-size: 100%;
+      backface-visibility:10%;
+    }
+    #btn{
+      background-color: green;
+      color: white;
+      padding: 5px;
+      margin-top: 10px;
+      border-radius: 3px;
+    }
+    #rslt{
+      text-align: center;
+      display: flex;
+    }
+    #heading{
+      text-align: center;
+      font-size: 55px;
+      font-family: cursive;
+    }
+    #results{
+      color: black;
+      text-align: center;
+      margin-top: 0px;
+      font-family:cursive;
+      font-size: 50px;
+    }
+    </style>
+</head>
+<body>
+  <!-- <div style="background-image:url({% static 'bgg.jpg'})" -->
+    <h1 id="heading">Heart Disease Prediction</h1>
+    <hr>
+    {% if result %}
+        <h1 id="results">The Patient is {{result}}</h1>
+    {% endif %}
+  <div class="models">
+    <form action="" method="POST">
+        {% csrf_token %}
+        Age : <input type="text" name="age" required><br>
+        trestbps : <input type="text" name="trestbps" required><br>
+        chol : <input type="text" name="chol" required><br>
+        thalach : <input type="text" name="thalach" required><br>
+        oldpeak : <input type="text" name="oldpeak" required><br>
+        sex_0 : <input type="number" name="sex_0" required><br>
+        sex_1 : <input type="number" name="sex_1" required><br>
+        cp_0: <input type="number" name="cp_0" required><br>
+        cp_1 : <input type="number" name="cp_1" required><br>
+        cp_2 : <input type="number" name="cp_2" required><br>
+        cp_3 : <input type="number" name="cp_3" required><br>
+        fbs_0 : <input type="number" name="fbs_0" required><br>
+        fbs_1 : <input type="number" name="fbs_1" required><br>
+        restecg_0 : <input type="number" name="restecg_0" required><br>
+        restecg_1 : <input type="number" name="restecg_1" required><br>
+        restecg_2 : <input type="number" name="restecg_2" required><br>
+        exang_0 : <input type="number" name="exang_0" required><br>
+        exang_1 : <input type="number" name="exang_1" required><br>
+        slope_0 : <input type="number" name="slope_0" required><br>
+        slope_1 : <input type="number" name="slope_1" required><br>
+        slope_2 : <input type="number" name="slope_2" required><br>
+        ca_0 : <input type="number" name="ca_0" required><br>
+        ca_1 : <input type="number" name="ca_1" required><br>
+        ca_2 : <input type="number" name="ca_2" required><br>
+        ca_3 : <input type="number" name="ca_3" required><br>
+        ca_4 : <input type="number" name="ca_4" required><br>
+        thal_0 : <input type="number" name="thal_0" required><br>
+        thal_1 : <input type="number" name="thal_1" required><br>
+        thal_2 : <input type="number" name="thal_2" required><br>
+        thal_3 : <input type="number" name="thal_3" required><br>
+        <input id="btn" type="submit">
+    </form>
+  </div>
+</body>
+</html>
